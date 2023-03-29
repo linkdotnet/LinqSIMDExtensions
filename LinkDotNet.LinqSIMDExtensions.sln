@@ -12,6 +12,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkDotNet.LinqSIMDExtensions.Tests", "tests\LinkDotNet.LinqSIMDExtensions.Tests\LinkDotNet.LinqSIMDExtensions.Tests.csproj", "{ACBFC08F-F088-4E81-BF64-DCCC14DCD092}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".text", ".text", "{8513963A-4592-4DEF-BC56-004EEA5B48FA}"
+	ProjectSection(SolutionItems) = preProject
+		CHANGELOG.md = CHANGELOG.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkDotNet.LinqSIMDExtensions.Benchmarks", "tests\LinkDotNet.LinqSIMDExtensions.Benchmarks\LinkDotNet.LinqSIMDExtensions.Benchmarks.csproj", "{71B0E9C3-96BA-416B-A924-CF6ECB1F2E37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,9 +36,14 @@ Global
 		{ACBFC08F-F088-4E81-BF64-DCCC14DCD092}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACBFC08F-F088-4E81-BF64-DCCC14DCD092}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACBFC08F-F088-4E81-BF64-DCCC14DCD092}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71B0E9C3-96BA-416B-A924-CF6ECB1F2E37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71B0E9C3-96BA-416B-A924-CF6ECB1F2E37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71B0E9C3-96BA-416B-A924-CF6ECB1F2E37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71B0E9C3-96BA-416B-A924-CF6ECB1F2E37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BF0BFA64-3B97-4D22-BA0D-39CC2DEDA30A} = {590AFBE7-652B-4C97-8F64-A2528282E9BD}
 		{ACBFC08F-F088-4E81-BF64-DCCC14DCD092} = {44C99A55-12E2-47CA-98F8-9B54C7D267AE}
+		{71B0E9C3-96BA-416B-A924-CF6ECB1F2E37} = {44C99A55-12E2-47CA-98F8-9B54C7D267AE}
 	EndGlobalSection
 EndGlobal
