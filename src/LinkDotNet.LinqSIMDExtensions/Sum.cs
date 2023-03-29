@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.IO.Compression;
+using System.Numerics;
 using System.Runtime.InteropServices;
 
 namespace LinkDotNet.LinqSIMDExtensions;
@@ -35,8 +36,7 @@ public static partial class LinqSIMDExtensions
         where T : unmanaged, INumberBase<T>
     {
         var spanAsVectors = MemoryMarshal.Cast<T, Vector<T>>(span);
-
-        var accVector = Vector<T>.Zero;
+        var accVector = VectorHelper.CreateWithValue(T.Zero);
 
         foreach (var spanAsVector in spanAsVectors)
         {
@@ -51,6 +51,7 @@ public static partial class LinqSIMDExtensions
             accVector = Vector.Add(accVector, new Vector<T>(lastVectorElements));
         }
 
-        return Vector.Dot(accVector, Vector<T>.One);
+        var oneVector = VectorHelper.CreateWithValue(T.One);
+        return Vector.Dot(accVector, oneVector);
     }
 }
