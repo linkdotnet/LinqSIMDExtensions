@@ -30,7 +30,17 @@ public class SumTests
     {
         List<int> numbers = null;
 
-        Assert.Throws<ArgumentNullException>(() => numbers.Sum());
+        Action act = () => numbers.Sum();
+        act.ShouldThrow<ArgumentNullException>();
+    }
+
+    [Fact]
+    public void GivenNullArray_WhenCallingSum_ThenArgumentNullExceptionIsThrown()
+    {
+        int[] numbers = null;
+
+        Action act = () => numbers.Sum();
+        act.ShouldThrow<ArgumentNullException>();
     }
 
     [Fact]

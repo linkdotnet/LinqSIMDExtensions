@@ -34,4 +34,20 @@ public class MinTests
 
         sum.ShouldBe(1);
     }
+
+    [Fact]
+    public void GivenNullList_WhenRetrievingMinimum_ThenArgumentNullExceptionIsThrown()
+    {
+        List<int> numbers = null;
+
+        Assert.Throws<ArgumentNullException>(() => numbers.Min());
+    }
+
+    [Fact]
+    public void GivenNullArray_WhenRetrievingMinimum_ThenArgumentNullExceptionIsThrown()
+    {
+        int[] numbers = null;
+
+        Assert.Throws<ArgumentNullException>(() => numbers.Min());
+    }
 }

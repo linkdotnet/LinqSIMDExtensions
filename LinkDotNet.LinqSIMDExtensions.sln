@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{44C99A55
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkDotNet.LinqSIMDExtensions.Tests", "tests\LinkDotNet.LinqSIMDExtensions.Tests\LinkDotNet.LinqSIMDExtensions.Tests.csproj", "{ACBFC08F-F088-4E81-BF64-DCCC14DCD092}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".text", ".text", "{8513963A-4592-4DEF-BC56-004EEA5B48FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
