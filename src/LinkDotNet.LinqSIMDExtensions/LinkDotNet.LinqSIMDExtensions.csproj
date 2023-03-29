@@ -4,6 +4,17 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <Authors>Steven Giesel</Authors>
+        <Company>Steven Giesel</Company>
+        <Title>BuildInformation</Title>
+        <Description>Supplies information about the build like build time.</Description>
+        <PackageProjectUrl>https://github.com/linkdotnet/LinqSIMDExtensions</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/linkdotnet/LinqSIMDExtensions</RepositoryUrl>
+        <PackageTags>csharp,dotnet,linq,simd,performance</PackageTags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 
 </Project>
