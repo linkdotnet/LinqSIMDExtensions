@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace LinkDotNet.LinqSIMDExtensions;
 
-public static class LinqSIMDExtensions
+public static partial class LinqSIMDExtensions
 {
     /// <summary>
     /// Gets the sum of the elements in the list.
@@ -39,7 +39,6 @@ public static class LinqSIMDExtensions
         {
             accVector = Vector.Add(spanAsVector, accVector);
         }
-
 
         var remainingElements = spanAsVectors.Length % Vector<T>.Count;
         if (remainingElements > 0)
