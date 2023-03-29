@@ -20,9 +20,9 @@ public class MinTests
     {
         var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-        var sum = numbers.Min();
+        var min = numbers.Min();
 
-        sum.ShouldBe(1);
+        min.ShouldBe(1);
     }
 
     [Fact]
@@ -30,9 +30,9 @@ public class MinTests
     {
         var numbers = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-        var sum = numbers.AsSpan().Min();
+        var min = numbers.AsSpan().Min();
 
-        sum.ShouldBe(1);
+        min.ShouldBe(1);
     }
 
     [Fact]

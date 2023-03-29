@@ -10,9 +10,9 @@ public class MaxTests
     {
         var numbers = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-        var min = numbers.Max();
+        var max = numbers.Max();
 
-        min.ShouldBe(10);
+        max.ShouldBe(10);
     }
 
     [Fact]
@@ -20,9 +20,9 @@ public class MaxTests
     {
         var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-        var sum = numbers.Max();
+        var max = numbers.Max();
 
-        sum.ShouldBe(10);
+        max.ShouldBe(10);
     }
 
     [Fact]
@@ -30,9 +30,9 @@ public class MaxTests
     {
         var numbers = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-        var sum = numbers.AsSpan().Max();
+        var max = numbers.AsSpan().Max();
 
-        sum.ShouldBe(10);
+        max.ShouldBe(10);
     }
 
     [Fact]
