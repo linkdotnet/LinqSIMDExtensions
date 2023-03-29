@@ -8,7 +8,9 @@ public static partial class LinqSIMDExtensions
     /// <summary>
     /// Retrieves the minimum value of the list.
     /// </summary>
-    public static T Min<T>(this List<T> list) where T : unmanaged, IMinMaxValue<T>, INumber<T>
+    ///
+    public static T Min<T>(this List<T> list)
+        where T : unmanaged, IMinMaxValue<T>, INumber<T>
     {
         ArgumentNullException.ThrowIfNull(list);
         var span = CollectionsMarshal.AsSpan(list);
@@ -19,7 +21,8 @@ public static partial class LinqSIMDExtensions
     /// <summary>
     /// Retrieves the minimum value of the array.
     /// </summary>
-    public static T Min<T>(this T[] array) where T : unmanaged, IMinMaxValue<T>, INumber<T>
+    public static T Min<T>(this T[] array)
+        where T : unmanaged, IMinMaxValue<T>, INumber<T>
     {
         ArgumentNullException.ThrowIfNull(array);
 
@@ -29,7 +32,8 @@ public static partial class LinqSIMDExtensions
     /// <summary>
     /// Retrieves the minimum value of the span.
     /// </summary>
-    public static T Min<T>(this Span<T> span) where T : unmanaged, IMinMaxValue<T>, INumber<T>
+    public static T Min<T>(this Span<T> span)
+        where T : unmanaged, IMinMaxValue<T>, INumber<T>
     {
         var spanAsVectors = MemoryMarshal.Cast<T, Vector<T>>(span);
 

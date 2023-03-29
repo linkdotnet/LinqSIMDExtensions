@@ -38,7 +38,7 @@ public class MaxTests
     [Fact]
     public void GivenNullList_WhenRetrievingMaximum_ThenArgumentNullExceptionIsThrown()
     {
-        List<int> numbers = null;
+        List<int> numbers = null!;
 
         Action act = () => numbers.Max();
         act.ShouldThrow<ArgumentNullException>();
@@ -47,7 +47,7 @@ public class MaxTests
     [Fact]
     public void GivenNullArray_WhenRetrievingMaximum_ThenArgumentNullExceptionIsThrown()
     {
-        int[] numbers = null;
+        int[] numbers = null!;
 
         Action act = () => numbers.Max();
         act.ShouldThrow<ArgumentNullException>();

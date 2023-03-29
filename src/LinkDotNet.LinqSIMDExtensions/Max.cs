@@ -8,7 +8,9 @@ public static partial class LinqSIMDExtensions
     /// <summary>
     /// Retrieves the maximum value of the list.
     /// </summary>
-    public static T Max<T>(this List<T> list) where T : unmanaged, IMinMaxValue<T>, INumber<T>
+    /// <returns>The max as type T.</returns>
+    public static T Max<T>(this List<T> list)
+        where T : unmanaged, IMinMaxValue<T>, INumber<T>
     {
         ArgumentNullException.ThrowIfNull(list);
         var span = CollectionsMarshal.AsSpan(list);
@@ -19,7 +21,9 @@ public static partial class LinqSIMDExtensions
     /// <summary>
     /// Retrieves the maximum value of the array.
     /// </summary>
-    public static T Max<T>(this T[] array) where T : unmanaged, IMinMaxValue<T>, INumber<T>
+    /// <returns>The max as type T.</returns>
+    public static T Max<T>(this T[] array)
+        where T : unmanaged, IMinMaxValue<T>, INumber<T>
     {
         ArgumentNullException.ThrowIfNull(array);
 
@@ -29,7 +33,9 @@ public static partial class LinqSIMDExtensions
     /// <summary>
     /// Retrieves the maximum value of the span.
     /// </summary>
-    public static T Max<T>(this Span<T> span) where T : unmanaged, IMinMaxValue<T>, INumber<T>
+    /// <returns>The max as type T.</returns>
+    public static T Max<T>(this Span<T> span)
+        where T : unmanaged, IMinMaxValue<T>, INumber<T>
     {
         var spanAsVectors = MemoryMarshal.Cast<T, Vector<T>>(span);
 

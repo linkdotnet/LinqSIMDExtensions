@@ -28,7 +28,7 @@ public class SumTests
     [Fact]
     public void GivenNullList_WhenCallingSum_ThenArgumentNullExceptionIsThrown()
     {
-        List<int> numbers = null;
+        List<int> numbers = null!;
 
         Action act = () => numbers.Sum();
         act.ShouldThrow<ArgumentNullException>();
@@ -37,7 +37,7 @@ public class SumTests
     [Fact]
     public void GivenNullArray_WhenCallingSum_ThenArgumentNullExceptionIsThrown()
     {
-        int[] numbers = null;
+        int[] numbers = null!;
 
         Action act = () => numbers.Sum();
         act.ShouldThrow<ArgumentNullException>();

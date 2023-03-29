@@ -8,7 +8,8 @@ public static partial class LinqSIMDExtensions
     /// <summary>
     /// Gets the sum of the elements in the list.
     /// </summary>
-    public static T Sum<T>(this List<T> list) where T : unmanaged, INumberBase<T>
+    public static T Sum<T>(this List<T> list)
+        where T : unmanaged, INumberBase<T>
     {
         ArgumentNullException.ThrowIfNull(list);
         var span = CollectionsMarshal.AsSpan(list);
@@ -19,7 +20,8 @@ public static partial class LinqSIMDExtensions
     /// <summary>
     /// Gets the sum of the elements in the array.
     /// </summary>
-    public static T Sum<T>(this T[] array) where T : unmanaged, INumberBase<T>
+    public static T Sum<T>(this T[] array)
+	    where T : unmanaged, INumberBase<T>
     {
         ArgumentNullException.ThrowIfNull(array);
 
@@ -29,7 +31,8 @@ public static partial class LinqSIMDExtensions
     /// <summary>
     /// Gets the sum of the elements in the span.
     /// </summary>
-    public static T Sum<T>(this Span<T> span) where T : unmanaged, INumberBase<T>
+    public static T Sum<T>(this Span<T> span)
+        where T : unmanaged, INumberBase<T>
     {
         var spanAsVectors = MemoryMarshal.Cast<T, Vector<T>>(span);
 
