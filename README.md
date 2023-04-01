@@ -1,5 +1,10 @@
-# LinkDotNet.LinqSIMDExtensions 
-LinkDotNet.LinqSIMDExtensions  is a high-performance library that combines the power of SIMD (Single Instruction, Multiple Data) and the elegance of LINQ (Language Integrated Query) syntax.
+#LinqSIMDExtensions 
+
+[![.NET](https://github.com/linkdotnet/LinqSIMDExtensions/actions/workflows/dotnet.yml/badge.svg)](https://github.com/linkdotnet/LinqSIMDExtensions/actions/workflows/dotnet.yml)
+[![Nuget](https://img.shields.io/nuget/dt/LinkDotNet.LinqSIMDExtensions)](https://www.nuget.org/packages/LinkDotNet.LinqSIMDExtensions/)
+[![GitHub tag](https://img.shields.io/github/v/tag/linkdotnet/LinqSIMDExtensions?include_prereleases&logo=github&style=flat-square)](https://github.com/linkdotnet/LinqSIMDExtensions/releases)
+
+LinqSIMDExtensions is a high-performance library that combines the power of SIMD (Single Instruction, Multiple Data) and the elegance of LINQ (Language Integrated Query) syntax.
 It leverages the generic math features introduced in .NET 7 to provide a wide range of data type support.
 With LinkDotNet.LinqSIMDExtensions, you can easily process large datasets in parallel, improving the performance of your applications.
 
