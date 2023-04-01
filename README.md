@@ -9,7 +9,7 @@ It is not recommend to use this library for small datasets as the overhead of th
  * Leverage SIMD operations for fast and parallel processing of data
  * Support for a wide range of data types (thanks to generic math)
  * LINQ syntax so you can almost use it as drop-in replacement
- * Currently supports: `Min`, `Max` and `Sum`
+ * Currently supports: `Min`, `Max`, `Sum`, `SequenceEqual` and `Average`
 
 ## Installation
 To install the package via NuGet, run the following command :
