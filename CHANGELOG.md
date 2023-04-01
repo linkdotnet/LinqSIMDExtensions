@@ -10,4 +10,4 @@ This is the initial release!
 
 ### Added
 
--   Added `Min`, `Max` and `Sum`
+-   Added `Min`, `Max`, `Sum` and `SequenceEqual`

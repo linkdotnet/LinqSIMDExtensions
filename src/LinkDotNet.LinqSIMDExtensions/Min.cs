@@ -8,7 +8,6 @@ public static partial class LinqSIMDExtensions
     /// <summary>
     /// Retrieves the minimum value of the list.
     /// </summary>
-    ///
     public static T Min<T>(this List<T> list)
         where T : unmanaged, IMinMaxValue<T>, INumber<T>
     {
