@@ -11,7 +11,7 @@ public class SequenceEqualTests
         var first = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         var second = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-        var result = MemoryExtensions.SequenceEqual(first.AsSpan(), second.AsSpan());
+        var result = first.AsSpan().SequenceEqual(second.AsSpan());
 
         result.ShouldBeTrue();
     }
