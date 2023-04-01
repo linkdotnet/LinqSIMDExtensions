@@ -9,7 +9,7 @@ public static partial class LinqSIMDExtensions
     /// Determines whether two sequences are equal by comparing the elements by using the default equality comparer for their type.
     /// </summary>
     public static bool SequenceEqual<T>(this List<T> list, List<T> other)
-        where T : unmanaged, IEquatable<T>
+        where T : unmanaged
     {
         ArgumentNullException.ThrowIfNull(list);
         ArgumentNullException.ThrowIfNull(other);
@@ -23,7 +23,7 @@ public static partial class LinqSIMDExtensions
     /// Determines whether two sequences are equal by comparing the elements by using the default equality comparer for their type.
     /// </summary>
     public static bool SequenceEqual<T>(this T[] array, T[] other)
-        where T : unmanaged, IEquatable<T>
+        where T : unmanaged
     {
         ArgumentNullException.ThrowIfNull(array);
         ArgumentNullException.ThrowIfNull(other);
@@ -37,7 +37,7 @@ public static partial class LinqSIMDExtensions
     /// Determines whether two sequences are equal by comparing the elements by using the default equality comparer for their type.
     /// </summary>
     public static bool SequenceEqual<T>(this Span<T> span, Span<T> other)
-        where T : unmanaged, IEquatable<T>
+        where T : unmanaged
     {
         if (span.Length != other.Length)
         {
