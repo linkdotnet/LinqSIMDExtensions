@@ -60,4 +60,14 @@ public class AverageTests
 
         Should.Throw<ArgumentNullException>(() => numbers.Average());
     }
+
+    [Fact]
+    public void GivenMemory_WhenAverage_ThenAverageIsReturned()
+    {
+        var numbers = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+        var average = numbers.AsMemory().Average();
+
+        average.ShouldBe(5);
+    }
 }

@@ -29,6 +29,13 @@ public static partial class LinqSIMDExtensions
     }
 
     /// <summary>
+    /// Gets the sum of the elements in the memory.
+    /// </summary>
+    public static T Sum<T>(this Memory<T> memory)
+        where T : unmanaged, INumberBase<T>
+        => Sum(memory.Span);
+
+    /// <summary>
     /// Gets the sum of the elements in the span.
     /// </summary>
     public static T Sum<T>(this Span<T> span)

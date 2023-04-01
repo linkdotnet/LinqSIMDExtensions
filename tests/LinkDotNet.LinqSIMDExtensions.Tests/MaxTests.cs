@@ -52,4 +52,14 @@ public class MaxTests
         Action act = () => numbers.Max();
         act.ShouldThrow<ArgumentNullException>();
     }
+
+    [Fact]
+    public void GivenMemory_WhenRetrievingMaximum_ThenTheCorrectMinimumIsReturned()
+    {
+        var numbers = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+        var max = numbers.AsMemory().Max();
+
+        max.ShouldBe(10);
+    }
 }

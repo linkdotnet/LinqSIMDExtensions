@@ -31,6 +31,14 @@ public static partial class LinqSIMDExtensions
     }
 
     /// <summary>
+    /// Retrieves the maximum value of the memory.
+    /// </summary>
+    /// <returns>The max as type T.</returns>
+    public static T Max<T>(this Memory<T> memory)
+        where T : unmanaged, IMinMaxValue<T>, INumber<T>
+        => Max(memory.Span);
+
+    /// <summary>
     /// Retrieves the maximum value of the span.
     /// </summary>
     /// <returns>The max as type T.</returns>

@@ -6,6 +6,9 @@ All notable changes to **ValueStringBuilder** will be documented in this file. T
 
 ## [Unreleased]
 
+### Added
+- Overloads for all functions that expects a `Memory<T>` object.
+
 ## [1.0.0] - 2023-04-01
 
 This is the initial release!

@@ -40,6 +40,19 @@ public static partial class LinqSIMDExtensions
     }
 
     /// <summary>
+    /// Returns the average of the elements in the memory.
+    /// </summary>
+    /// <typeparam name="T">Any number-like object that is able to use the division operation.</typeparam>
+    /// <returns>Returns the average in the same given type as the input.</returns>
+    /// <remarks>
+    /// As the input as well as the output is of type <typeparamref name="T"/> the result is maybe not rounded mathematically correct.
+    /// Given two integers 1 and 2 the average is 1.5 but the result is 1.
+    /// </remarks>
+    public static T Average<T>(this Memory<T> memory)
+        where T : unmanaged, INumberBase<T>, IDivisionOperators<T, T, T>
+        => Average(memory.Span);
+
+    /// <summary>
     /// Returns the average of the elements in the span.
     /// </summary>
     /// <typeparam name="T">Any number-like object that is able to use the division operation.</typeparam>

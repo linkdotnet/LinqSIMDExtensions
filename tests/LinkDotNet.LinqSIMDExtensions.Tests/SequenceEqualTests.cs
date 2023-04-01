@@ -81,4 +81,15 @@ public class SequenceEqualTests
 
         act.ShouldThrow<ArgumentNullException>();
     }
+
+    [Fact]
+    public void GivenMemory_WhenCheckingSequenceEqual_ThenTheCorrectResultIsReturned()
+    {
+        var first = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        var second = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+        var result = first.AsMemory().SequenceEqual(second.AsMemory());
+
+        result.ShouldBeTrue();
+    }
 }

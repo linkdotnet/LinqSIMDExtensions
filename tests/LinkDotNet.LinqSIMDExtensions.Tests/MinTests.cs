@@ -50,4 +50,14 @@ public class MinTests
 
         Assert.Throws<ArgumentNullException>(() => numbers.Min());
     }
+
+    [Fact]
+    public void GivenMEmory_WhenRetrievingMinimum_ThenTheCorrectMinimumIsReturned()
+    {
+        var numbers = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+        var min = numbers.AsMemory().Min();
+
+        min.ShouldBe(1);
+    }
 }

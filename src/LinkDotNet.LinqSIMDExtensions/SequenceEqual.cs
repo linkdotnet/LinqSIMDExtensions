@@ -36,6 +36,13 @@ public static partial class LinqSIMDExtensions
     /// <summary>
     /// Determines whether two sequences are equal by comparing the elements by using the default equality comparer for their type.
     /// </summary>
+    public static bool SequenceEqual<T>(this Memory<T> memory, Memory<T> other)
+        where T : unmanaged
+        => SequenceEqual(memory.Span, other.Span);
+
+    /// <summary>
+    /// Determines whether two sequences are equal by comparing the elements by using the default equality comparer for their type.
+    /// </summary>
     public static bool SequenceEqual<T>(this Span<T> span, Span<T> other)
         where T : unmanaged
     {
