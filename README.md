@@ -30,21 +30,8 @@ var result = numbers.Min();
 ```
 
 ## Benchmark
-Here a small benchmark showing the difference between LINQ Sum and the SIMD Sum:
-```csharp
-public class SumBenchmark
-{
-    private readonly int[] _numbers = Enumerable.Range(0, 1000).ToArray();
+You can head over to [benchmark section](tests/LinkDotNet.LinqSIMDExtensions.Benchmarks/) to see the setup.
 
-    [Benchmark(Baseline = true)]
-    public int LinqSUM() => Enumerable.Sum(_numbers);
-
-    [Benchmark]
-    public int LinqSIMDSUM() => LinqSIMDExtensions.Sum(_numbers);
-}
-```
-
-The results:
 ```no-class
 BenchmarkDotNet=v0.13.5, OS=macOS Ventura 13.2.1 (22D68) [Darwin 22.3.0]
 Apple M1 Pro, 1 CPU, 10 logical and 10 physical cores
@@ -53,10 +40,14 @@ Apple M1 Pro, 1 CPU, 10 logical and 10 physical cores
   DefaultJob : .NET 7.0.4 (7.0.423.11508), Arm64 RyuJIT AdvSIMD
 
 
-|      Method |     Mean |   Error |  StdDev | Ratio |
-|------------ |---------:|--------:|--------:|------:|
-|     LinqSUM | 328.6 ns | 0.77 ns | 0.72 ns |  1.00 |
-| LinqSIMDSUM | 118.9 ns | 0.57 ns | 0.51 ns |  0.36 |
+| Method          |       Mean |   Error |  StdDev | Ratio |
+| --------------- | ---------: | ------: | ------: | ----: |
+| LinqSUM         |   328.6 ns | 0.77 ns | 0.72 ns |  1.00 |
+| LinqSIMDSUM     |   118.9 ns | 0.57 ns | 0.51 ns |  0.36 |
+|                 |            |         |         |       |
+| LinqAverage     | 1,050.7 ns | 1.04 ns | 0.98 ns |  1.00 |
+| LinqSIMDAverage |   178.6 ns | 0.28 ns | 0.25 ns |  0.17 |
+
 ```
 
 ## Constraints
