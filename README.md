@@ -1,4 +1,4 @@
-#LinqSIMDExtensions 
+# LinqSIMDExtensions 
 
 [![.NET](https://github.com/linkdotnet/LinqSIMDExtensions/actions/workflows/dotnet.yml/badge.svg)](https://github.com/linkdotnet/LinqSIMDExtensions/actions/workflows/dotnet.yml)
 [![Nuget](https://img.shields.io/nuget/dt/LinkDotNet.LinqSIMDExtensions)](https://www.nuget.org/packages/LinkDotNet.LinqSIMDExtensions/)
