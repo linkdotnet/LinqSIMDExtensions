@@ -43,7 +43,7 @@ public static partial class LinqSIMDExtensions
             accVector = Vector.Add(spanAsVector, accVector);
         }
 
-        var remainingElements = spanAsVectors.Length % Vector<T>.Count;
+        var remainingElements = span.Length % Vector<T>.Count;
         if (remainingElements > 0)
         {
             Span<T> lastVectorElements = stackalloc T[Vector<T>.Count];
