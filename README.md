@@ -1,7 +1,7 @@
 # LinkDotNet.LinqSIMDExtensions 
 LinkDotNet.LinqSIMDExtensions  is a high-performance library that combines the power of SIMD (Single Instruction, Multiple Data) and the elegance of LINQ (Language Integrated Query) syntax.
 It leverages the generic math features introduced in .NET 7 to provide a wide range of data type support.
-With LinkDotNet.LinqSIMDExtensions , you can easily process large datasets in parallel, improving the performance of your applications.
+With LinkDotNet.LinqSIMDExtensions, you can easily process large datasets in parallel, improving the performance of your applications.
 
 It is not recommend to use this library for small datasets as the overhead of the SIMD operations is not worth it.
 
@@ -54,3 +54,4 @@ Apple M1 Pro, 1 CPU, 10 logical and 10 physical cores
 As we are using SIMD the following constraints apply:
  * The collection type has to be contiguous memory (e.g. `List<T>`, `T[]`, `Span<T>`). Types like `IEnumerable<T>` or `IReadOnlyList<T>` are not supported.
  * The underlying number has to implement specific interfaces (like `IMinMaxValue`) to be able to determine the min/max value of the type.
+ * Some functions like `Average` can not return a more specific type than the input. This means that if you have a `List<int>` and call `Average` on it, the result will be a `int` and not an `double`.
