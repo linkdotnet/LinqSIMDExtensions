@@ -8,7 +8,7 @@
         <LangVersion>latest</LangVersion>
         <Authors>Steven Giesel (linkdotnet)</Authors>
         <Company>Steven Giesel (linkdotnet)</Company>
-        <Title>BuildInformation</Title>
+        <Title>LinkDotNet.LinqSIMDExtensions</Title>
         <Description>A LINQ-like extensions for C# that uses SIMD extensions to parallelize the operations</Description>
         <PackageProjectUrl>https://github.com/linkdotnet/LinqSIMDExtensions</PackageProjectUrl>
         <RepositoryUrl>https://github.com/linkdotnet/LinqSIMDExtensions</RepositoryUrl>
