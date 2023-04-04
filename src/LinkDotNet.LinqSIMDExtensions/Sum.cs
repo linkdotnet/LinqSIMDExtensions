@@ -46,7 +46,7 @@ public static partial class LinqSIMDExtensions
 
         foreach (var spanAsVector in spanAsVectors)
         {
-            accVector = Vector.Add(spanAsVector, accVector);
+            accVector += spanAsVector;
         }
 
         var remainingElements = span.Length % Vector<T>.Count;
@@ -54,7 +54,7 @@ public static partial class LinqSIMDExtensions
         {
             Span<T> lastVectorElements = stackalloc T[Vector<T>.Count];
             span[^remainingElements..].CopyTo(lastVectorElements);
-            accVector = Vector.Add(accVector, new Vector<T>(lastVectorElements));
+            accVector += new Vector<T>(lastVectorElements);
         }
 
         var oneVector = VectorHelper.CreateWithValue(T.One);

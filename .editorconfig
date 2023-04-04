@@ -454,6 +454,7 @@ dotnet_diagnostic.S101.severity = none # S101: Types should be named in PascalCa
 dotnet_diagnostic.S1075.severity = suggestion # S1075: URIs should not be hardcoded
 dotnet_diagnostic.S1186.severity = suggestion # S1186: Methods should not be empty
 dotnet_diagnostic.S2292.severity = suggestion # S2292: Trivial properties should be auto-implemented
+dotnet_diagnostic.S3267.severity = none # S3267: Loops should be simplified with "LINQ" expressions
 dotnet_diagnostic.S4158.severity = none # BUGGY with C#9 code - doesnt understand local methods
 
 ##########################################

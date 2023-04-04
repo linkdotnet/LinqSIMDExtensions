@@ -6,6 +6,10 @@ All notable changes to **ValueStringBuilder** will be documented in this file. T
 
 ## [Unreleased]
 
+### Added
+
+- New `Contains` method to check if an collection contains a specific value.
+
 ## [1.1.0] - 2023-04-04
 
 ### Added

@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".text", ".text", "{8513963A
 	ProjectSection(SolutionItems) = preProject
 		CHANGELOG.md = CHANGELOG.md
 		README.md = README.md
+		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkDotNet.LinqSIMDExtensions.Benchmarks", "tests\LinkDotNet.LinqSIMDExtensions.Benchmarks\LinkDotNet.LinqSIMDExtensions.Benchmarks.csproj", "{71B0E9C3-96BA-416B-A924-CF6ECB1F2E37}"

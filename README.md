@@ -14,7 +14,7 @@ It is not recommend to use this library for small datasets as the overhead of th
  * Leverage SIMD operations for fast and parallel processing of data
  * Support for a wide range of data types (thanks to generic math)
  * LINQ syntax so you can almost use it as drop-in replacement
- * Currently supports: `Min`, `Max`, `Sum`, `SequenceEqual` and `Average`
+ * Currently supports: `Min`, `Max`, `Sum`, `SequenceEqual`, `Average`, `Contains`
 
 ## Installation
 To install the package via NuGet, run the following command :
@@ -61,3 +61,4 @@ As we are using SIMD the following constraints apply:
  * The underlying number has to implement specific interfaces (like `IMinMaxValue`) to be able to determine the min/max value of the type.
  * Some functions like `Average` can not return a more specific type than the input. This means that if you have a `List<int>` and call `Average` on it, the result will be a `int` and not an `double`.
  * There are no arithmetic checks. So it is prune to overflow or underflow.
+ * `Contains` on `List<T>` has to be invoked like this: `LinqSIMDExtensions.Contains(list, value)`. This is due to the fact that the `Contains` method is already defined on `List<T>` and the compiler can not resolve the correct method.
