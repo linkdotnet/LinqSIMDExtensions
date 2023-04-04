@@ -60,3 +60,4 @@ As we are using SIMD the following constraints apply:
  * The collection type has to be contiguous memory (e.g. `List<T>`, `T[]`, `Span<T>`). Types like `IEnumerable<T>` or `IReadOnlyList<T>` are not supported.
  * The underlying number has to implement specific interfaces (like `IMinMaxValue`) to be able to determine the min/max value of the type.
  * Some functions like `Average` can not return a more specific type than the input. This means that if you have a `List<int>` and call `Average` on it, the result will be a `int` and not an `double`.
+ * There are no arithmetic checks. So it is prune to overflow or underflow.
