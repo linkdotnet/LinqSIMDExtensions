@@ -6,9 +6,11 @@ All notable changes to **ValueStringBuilder** will be documented in this file. T
 
 ## [Unreleased]
 
+## [1.2.0] - 2023-04-04
+
 ### Added
 
-- New `Contains` method to check if an collection contains a specific value.
+-   New `Contains` method to check if an collection contains a specific value.
 
 ## [1.1.0] - 2023-04-04
 
@@ -24,7 +26,9 @@ This is the initial release!
 
 -   Added `Min`, `Max`, `Sum`, `SequenceEqual` and `Average`
 
-[Unreleased]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.1.0...HEAD
+[Unreleased]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.2.0...HEAD
+
+[1.2.0]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.1.0...1.2.0
 
 [1.1.0]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.0.0...1.1.0
 
