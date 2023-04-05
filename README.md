@@ -4,11 +4,12 @@
 [![Nuget](https://img.shields.io/nuget/dt/LinkDotNet.LinqSIMDExtensions)](https://www.nuget.org/packages/LinkDotNet.LinqSIMDExtensions/)
 [![GitHub tag](https://img.shields.io/github/v/tag/linkdotnet/LinqSIMDExtensions?include_prereleases&logo=github&style=flat-square)](https://github.com/linkdotnet/LinqSIMDExtensions/releases)
 
-LinqSIMDExtensions is a high-performance library that combines the power of SIMD (Single Instruction, Multiple Data) and the elegance of LINQ (Language Integrated Query) syntax.
-It leverages the generic math features introduced in .NET 7 to provide a wide range of data type support.
-With LinkDotNet.LinqSIMDExtensions, you can easily process large datasets in parallel, improving the performance of your applications.
+LinqSIMDExtensions is a high-performance library that combines the power of SIMD (Single Instruction, Multiple Data) and the elegance of LINQ (Language Integrated Query) syntax. SIMD uses features like AVX, SSE, NEON, etc. to process multiple data in parallel. The performance depends on the hardware and the data type. Some extensions like AVX-512 are only available on x86/x64 architectures.
 
-It is not recommend to use this library for small datasets as the overhead of the SIMD operations is not worth it.
+LinqSIMDExtensions leverages the generic math features introduced in .NET 7 to provide a wide range of data type support.
+With LinkDotNet.LinqSIMDExtensions, you can efficiently process large datasets in parallel, improving the performance of your applications.
+
+Using this library for small datasets is not recommended as the overhead of the SIMD operations is not worth it.
 
 ## Features
  * Leverage SIMD operations for fast and parallel processing of data
@@ -35,7 +36,9 @@ var result = numbers.Min();
 ```
 
 ## Benchmark
-You can head over to [benchmark section](tests/LinkDotNet.LinqSIMDExtensions.Benchmarks/) to see the setup.
+You can head over to [benchmark section](tests/LinkDotNet.LinqSIMDExtensions.Benchmarks/) to see the setup. The following section will show you some results of different machines and architectures. Keep in mind to test against your specific use case with the hardware that will run it! SIMD can vary a lot depending on the hardware. Newer hardware tends to have better support for SIMD (if x86/x64 is used).
+
+Here are the benchmarks for a M1 Pro. Keep in mind that the M1 (arm64) does not support all SIMD operations. So the performance is not as good as on a x64 machine.
 
 ```no-class
 BenchmarkDotNet=v0.13.5, OS=macOS Ventura 13.2.1 (22D68) [Darwin 22.3.0]
