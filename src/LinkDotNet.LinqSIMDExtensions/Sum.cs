@@ -57,7 +57,6 @@ public static partial class LinqSIMDExtensions
             accVector += new Vector<T>(lastVectorElements);
         }
 
-        var oneVector = VectorHelper.CreateWithValue(T.One);
-        return Vector.Dot(accVector, oneVector);
+        return Vector.Sum(accVector);
     }
 }

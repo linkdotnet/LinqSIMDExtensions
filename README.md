@@ -65,3 +65,4 @@ As we are using SIMD the following constraints apply:
  * Some functions like `Average` can not return a more specific type than the input. This means that if you have a `List<int>` and call `Average` on it, the result will be a `int` and not an `double`.
  * There are no arithmetic checks. So it is prune to overflow or underflow.
  * `Contains` on `List<T>` has to be invoked like this: `LinqSIMDExtensions.Contains(list, value)`. This is due to the fact that the `Contains` method is already defined on `List<T>` and the compiler can not resolve the correct method.
+ * The underlying data type has to be supported by the SIMD instruction. For example `Complex` is not supported as it is not a primitive type.

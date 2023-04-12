@@ -6,6 +6,10 @@ All notable changes to **ValueStringBuilder** will be documented in this file. T
 
 ## [Unreleased]
 
+### Added
+
+- Smaller improvement in `Sum`
+
 ## [1.2.1] - 2023-04-10
 
 ## [1.2.0] - 2023-04-04
