@@ -48,14 +48,13 @@ Apple M1 Pro, 1 CPU, 10 logical and 10 physical cores
   DefaultJob : .NET 7.0.4 (7.0.423.11508), Arm64 RyuJIT AdvSIMD
 
 
-| Method          |       Mean |   Error |  StdDev | Ratio |
-| --------------- | ---------: | ------: | ------: | ----: |
-| LinqSUM         |   328.6 ns | 0.77 ns | 0.72 ns |  1.00 |
-| LinqSIMDSUM     |   118.9 ns | 0.57 ns | 0.51 ns |  0.36 |
-|                 |            |         |         |       |
-| LinqAverage     | 1,050.7 ns | 1.04 ns | 0.98 ns |  1.00 |
-| LinqSIMDAverage |   178.6 ns | 0.28 ns | 0.25 ns |  0.17 |
-
+| Method          |        Mean |    Error |   StdDev | Ratio |
+| --------------- | ----------: | -------: | -------: | ----: |
+| LinqMin         |   176.93 ns | 0.783 ns | 0.732 ns |  1.00 |
+| LinqSIMDMin     |    65.48 ns | 0.255 ns | 0.238 ns |  0.37 |
+|                 |             |          |          |       |
+| LinqAverage     | 1,058.29 ns | 5.354 ns | 5.008 ns |  1.00 |
+| LinqSIMDAverage |    80.97 ns | 0.465 ns | 0.435 ns |  0.08 |
 ```
 
 ## Constraints
