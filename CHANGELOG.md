@@ -6,6 +6,11 @@ All notable changes to **ValueStringBuilder** will be documented in this file. T
 
 ## [Unreleased]
 
+### Changed
+
+- `Sum` uses a better implementation that reduces 33% of the time needed to calculate. This has direct performance improvements on `Average` as well.
+- `Min`, `Max` also have a better runtime (also 33% faster) thanks to a better algorithm.
+
 ## [1.2.2] - 2023-04-12
 
 ### Added

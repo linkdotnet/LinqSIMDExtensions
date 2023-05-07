@@ -43,11 +43,16 @@ public static partial class LinqSIMDExtensions
         where T : unmanaged, IMinMaxValue<T>, INumber<T>
     {
         var spanAsVectors = MemoryMarshal.Cast<T, Vector<T>>(span);
-        var minVector = VectorHelper.CreateWithValue(T.MaxValue);
+        var minVector = new Vector<T>();
 
-        foreach (var spanAsVector in spanAsVectors)
+        for (var i = 0; i < spanAsVectors.Length; i += 2)
         {
-            minVector = Vector.Min(spanAsVector, minVector);
+            minVector = Vector.Min(spanAsVectors[i], spanAsVectors[i + 1]);
+        }
+
+        if (spanAsVectors.Length % 2 == 1)
+        {
+            minVector = Vector.Min(minVector, spanAsVectors[^1]);
         }
 
         var remainingElements = spanAsVectors.Length % Vector<T>.Count;
