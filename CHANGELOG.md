@@ -6,10 +6,12 @@ All notable changes to **ValueStringBuilder** will be documented in this file. T
 
 ## [Unreleased]
 
+## [1.3.0] - 2023-05-07
+
 ### Changed
 
-- `Sum` uses a better implementation that reduces 33% of the time needed to calculate. This has direct performance improvements on `Average` as well.
-- `Min`, `Max` also have a better runtime (also 33% faster) thanks to a better algorithm.
+-   `Sum` uses a better implementation that reduces 33% of the time needed to calculate. This has direct performance improvements on `Average` as well.
+-   `Min`, `Max` also have a better runtime (also 33% faster) thanks to a better algorithm.
 
 ## [1.2.2] - 2023-04-12
 
@@ -39,7 +41,9 @@ This is the initial release!
 
 -   Added `Min`, `Max`, `Sum`, `SequenceEqual` and `Average`
 
-[Unreleased]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.2.2...HEAD
+[Unreleased]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.3.0...HEAD
+
+[1.3.0]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.2.2...1.3.0
 
 [1.2.2]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.2.1...1.2.2
 
