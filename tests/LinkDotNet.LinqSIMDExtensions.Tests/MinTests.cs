@@ -60,4 +60,15 @@ public class MinTests
 
         min.ShouldBe(1);
     }
+
+    [Theory]
+    [InlineData(1, 2)]
+    [InlineData(1, 2, 3, 4)]
+    [InlineData(1, 2, 3, 4, 5, 6)]
+    public void GivenUltraShortList_WhenGettingMinimum_ThenTheCorrectMinimumIsReturned(params int[] numbers)
+    {
+        var min = numbers.Min();
+
+        min.ShouldBe(1);
+    }
 }

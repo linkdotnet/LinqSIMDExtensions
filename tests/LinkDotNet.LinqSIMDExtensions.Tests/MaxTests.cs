@@ -62,4 +62,15 @@ public class MaxTests
 
         max.ShouldBe(10);
     }
+
+    [Theory]
+    [InlineData(6, 5)]
+    [InlineData(6, 5, 4, 3)]
+    [InlineData(1, 2, 3, 4, 5, 6)]
+    public void GivenUltraShortList_WhenGettingMinimum_ThenTheCorrectMinimumIsReturned(params int[] numbers)
+    {
+        var max = numbers.Max();
+
+        max.ShouldBe(6);
+    }
 }
