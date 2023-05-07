@@ -45,7 +45,7 @@ public static partial class LinqSIMDExtensions
         var remainingElements = span.Length % Vector<T>.Count;
         var accVector = new Vector<T>();
 
-        for (var i = 0; i < spanAsVectors.Length; i += 2)
+        for (var i = 0; i < spanAsVectors.Length - 1; i += 2)
         {
             accVector += spanAsVectors[i] + spanAsVectors[i + 1];
         }

@@ -45,7 +45,7 @@ public static partial class LinqSIMDExtensions
         var spanAsVectors = MemoryMarshal.Cast<T, Vector<T>>(span);
         var minVector = new Vector<T>();
 
-        for (var i = 0; i < spanAsVectors.Length; i += 2)
+        for (var i = 0; i < spanAsVectors.Length - 1; i += 2)
         {
             minVector = Vector.Min(spanAsVectors[i], spanAsVectors[i + 1]);
         }

@@ -48,7 +48,7 @@ public static partial class LinqSIMDExtensions
         var spanAsVectors = MemoryMarshal.Cast<T, Vector<T>>(span);
         var maxVector = new Vector<T>();
 
-        for (var i = 0; i < spanAsVectors.Length; i += 2)
+        for (var i = 0; i < spanAsVectors.Length - 1; i += 2)
         {
             maxVector = Vector.Max(spanAsVectors[i], spanAsVectors[i + 1]);
         }
