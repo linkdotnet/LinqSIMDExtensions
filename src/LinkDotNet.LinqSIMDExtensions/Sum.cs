@@ -42,14 +42,19 @@ public static partial class LinqSIMDExtensions
         where T : unmanaged, INumberBase<T>
     {
         var spanAsVectors = MemoryMarshal.Cast<T, Vector<T>>(span);
-        var accVector = VectorHelper.CreateWithValue(T.Zero);
+        var remainingElements = span.Length % Vector<T>.Count;
+        var accVector = new Vector<T>();
 
-        foreach (var spanAsVector in spanAsVectors)
+        for (var i = 0; i < spanAsVectors.Length; i += 2)
         {
-            accVector += spanAsVector;
+            accVector += spanAsVectors[i] + spanAsVectors[i + 1];
         }
 
-        var remainingElements = span.Length % Vector<T>.Count;
+        if (spanAsVectors.Length % 2 == 1)
+        {
+            accVector += spanAsVectors[^1];
+        }
+
         if (remainingElements > 0)
         {
             Span<T> lastVectorElements = stackalloc T[Vector<T>.Count];
