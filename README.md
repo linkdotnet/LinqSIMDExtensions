@@ -62,6 +62,6 @@ As we are using SIMD the following constraints apply:
  * The collection type has to be contiguous memory (e.g. `List<T>`, `T[]`, `Span<T>`). Types like `IEnumerable<T>` or `IReadOnlyList<T>` are not supported.
  * The underlying number has to implement specific interfaces (like `IMinMaxValue`) to be able to determine the min/max value of the type.
  * Some functions like `Average` can not return a more specific type than the input. This means that if you have a `List<int>` and call `Average` on it, the result will be a `int` and not an `double`.
- * There are no arithmetic checks. So it is prune to overflow or underflow.
+ * There are no arithmetic checks. So it is prone to overflow or underflow.
  * `Contains` on `List<T>` has to be invoked like this: `LinqSIMDExtensions.Contains(list, value)`. This is due to the fact that the `Contains` method is already defined on `List<T>` and the compiler can not resolve the correct method.
  * The underlying data type has to be supported by the SIMD instruction. For example `Complex` is not supported as it is not a primitive type.
