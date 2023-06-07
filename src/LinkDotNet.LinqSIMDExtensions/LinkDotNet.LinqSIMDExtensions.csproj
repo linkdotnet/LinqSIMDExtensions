@@ -25,7 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Update="SonarAnalyzer.CSharp" Version="9.2.0.71021">
+      <PackageReference Update="SonarAnalyzer.CSharp" Version="9.3.0.71466">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
