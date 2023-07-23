@@ -6,9 +6,11 @@ All notable changes to **ValueStringBuilder** will be documented in this file. T
 
 ## [Unreleased]
 
+## [1.4.0] - 2023-07-23
+
 ### Added
 
-- Support for `net7.0` and `net8.0`
+-   Support for `net7.0` and `net8.0`
 
 ## [1.3.0] - 2023-05-07
 
@@ -45,7 +47,9 @@ This is the initial release!
 
 -   Added `Min`, `Max`, `Sum`, `SequenceEqual` and `Average`
 
-[Unreleased]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.3.0...HEAD
+[Unreleased]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.4.0...HEAD
+
+[1.4.0]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.3.0...1.4.0
 
 [1.3.0]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.2.2...1.3.0
 
