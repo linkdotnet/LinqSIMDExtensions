@@ -14,7 +14,7 @@
         <PackageTags>csharp,dotnet,linq,simd,performance</PackageTags>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <TargetFrameworks>net7.0;net6.0;net8.0</TargetFrameworks>
+        <TargetFrameworks>net7.0;net8.0</TargetFrameworks>
     </PropertyGroup>
 
     <ItemGroup>
