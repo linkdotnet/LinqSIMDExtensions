@@ -6,6 +6,10 @@ All notable changes to **ValueStringBuilder** will be documented in this file. T
 
 ## [Unreleased]
 
+### Added
+
+- Support for `net6.0` and `net8.0`
+
 ## [1.3.0] - 2023-05-07
 
 ### Changed
