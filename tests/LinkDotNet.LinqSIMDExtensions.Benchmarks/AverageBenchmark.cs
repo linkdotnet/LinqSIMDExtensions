@@ -11,4 +11,7 @@ public class AverageBenchmark
 
     [Benchmark]
     public float LinqSIMDAverage() => LinqSIMDExtensions.Average(_numbers);
+
+    [Benchmark]
+    public float SIMDLinqAverage() => SimdLinq.SimdLinqExtensions.Average(_numbers);
 }

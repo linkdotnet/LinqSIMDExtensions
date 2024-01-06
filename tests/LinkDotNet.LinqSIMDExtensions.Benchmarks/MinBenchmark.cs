@@ -11,4 +11,7 @@ public class MinBenchmark
 
     [Benchmark]
     public int LinqSIMDMin() => LinqSIMDExtensions.Min(_numbers);
+
+    [Benchmark]
+    public int SIMDLinqMin() => SimdLinq.SimdLinqExtensions.Min(_numbers);
 }

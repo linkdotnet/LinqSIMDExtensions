@@ -11,4 +11,7 @@ public class ContainsBenchmark
 
     [Benchmark]
     public bool LinqSIMDContains() => LinqSIMDExtensions.Contains(_numbers, 80000);
+
+    [Benchmark]
+    public bool SIMDLinqContains() => SimdLinq.SimdLinqExtensions.Contains(_numbers, 80000);
 }

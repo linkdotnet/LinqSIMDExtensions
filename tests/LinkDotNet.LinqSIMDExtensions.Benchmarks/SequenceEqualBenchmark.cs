@@ -12,4 +12,7 @@ public class SequenceEqualBenchmark
 
     [Benchmark]
     public bool LinqSIMDSequenceEqual() => LinqSIMDExtensions.SequenceEqual(_numbers1, _numbers2);
+
+    [Benchmark]
+    public bool SIMDLinqSequenceEqual() => SimdLinq.SimdLinqExtensions.SequenceEqual(_numbers1, _numbers2);
 }

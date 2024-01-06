@@ -12,4 +12,7 @@ public class SumBenchmark
 
     [Benchmark]
     public int LinqSIMDSum() => LinqSIMDExtensions.Sum(_numbers);
+
+    [Benchmark]
+    public int SIMDLinq() => SimdLinq.SimdLinqExtensions.Sum(_numbers);
 }
