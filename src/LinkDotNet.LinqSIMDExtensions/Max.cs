@@ -50,7 +50,8 @@ public static partial class LinqSIMDExtensions
 
         for (var i = 0; i < spanAsVectors.Length - 1; i += 2)
         {
-            maxVector = Vector.Max(spanAsVectors[i], spanAsVectors[i + 1]);
+            var iterationMax = Vector.Max(spanAsVectors[i], spanAsVectors[i + 1]);
+            maxVector = Vector.Max(maxVector, iterationMax);
         }
 
         if (spanAsVectors.Length % 2 == 1)

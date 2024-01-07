@@ -6,6 +6,9 @@ All notable changes to **ValueStringBuilder** will be documented in this file. T
 
 ## [Unreleased]
 
+### Fixed
+- `Min` and `Max` did return wrong values for longer lists.
+
 ## [1.4.0] - 2023-07-23
 
 ### Added

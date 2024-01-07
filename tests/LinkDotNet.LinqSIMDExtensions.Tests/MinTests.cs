@@ -71,4 +71,14 @@ public class MinTests
 
         min.ShouldBe(1);
     }
+
+    [Fact]
+    public void GivenLongerList_WhenGettingMinimum_ThenTheCorrectMinimumIsReturned()
+    {
+        var sequence = Enumerable.Range(0, 100).ToList();
+
+        var min = sequence.Min();
+
+        min.ShouldBe(0);
+    }
 }

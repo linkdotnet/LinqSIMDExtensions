@@ -6,7 +6,7 @@ namespace LinkDotNet.LinqSIMDExtensions.Tests;
 public class MaxTests
 {
     [Fact]
-    public void GivenSomeNumbers_WhenRetrievingMaximumInArrays_ThenTheCorrectMinimumIsReturned()
+    public void GivenSomeNumbers_WhenRetrievingMaximumInArrays_ThenTheCorrectMaximumIsReturned()
     {
         var numbers = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
@@ -16,7 +16,7 @@ public class MaxTests
     }
 
     [Fact]
-    public void GivenSomeNumbers_WhenRetrievingMaximumInList_ThenTheCorrectMinimumIsReturned()
+    public void GivenSomeNumbers_WhenRetrievingMaximumInList_ThenTheCorrectMaximumIsReturned()
     {
         var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
@@ -26,7 +26,7 @@ public class MaxTests
     }
 
     [Fact]
-    public void GivenSomeNumbers_WhenRetrievingMaximumInSpan_ThenTheCorrectMinimumIsReturned()
+    public void GivenSomeNumbers_WhenRetrievingMaximumInSpan_ThenTheCorrectMaximumIsReturned()
     {
         var numbers = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
@@ -54,7 +54,7 @@ public class MaxTests
     }
 
     [Fact]
-    public void GivenMemory_WhenRetrievingMaximum_ThenTheCorrectMinimumIsReturned()
+    public void GivenMemory_WhenRetrievingMaximum_ThenTheCorrectMaximumIsReturned()
     {
         var numbers = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
@@ -72,5 +72,15 @@ public class MaxTests
         var max = numbers.Max();
 
         max.ShouldBe(6);
+    }
+
+    [Fact]
+    public void GivenLongerList_WhenGettingMaximum_ThenTheCorrectMaximumIsReturned()
+    {
+        var sequence = Enumerable.Range(0, 21).Select(i => 20 - i).ToList();
+
+        var max = sequence.Max();
+
+        max.ShouldBe(20);
     }
 }

@@ -47,7 +47,8 @@ public static partial class LinqSIMDExtensions
 
         for (var i = 0; i < spanAsVectors.Length - 1; i += 2)
         {
-            minVector = Vector.Min(spanAsVectors[i], spanAsVectors[i + 1]);
+            var iterationMin = Vector.Min(spanAsVectors[i], spanAsVectors[i + 1]);
+            minVector = Vector.Min(minVector, iterationMin);
         }
 
         if (spanAsVectors.Length % 2 == 1)
