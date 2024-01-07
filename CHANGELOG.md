@@ -6,8 +6,11 @@ All notable changes to **ValueStringBuilder** will be documented in this file. T
 
 ## [Unreleased]
 
+## [1.4.1] - 2024-01-07
+
 ### Fixed
-- `Min` and `Max` did return wrong values for longer lists.
+
+-   `Min` and `Max` did return wrong values for longer lists.
 
 ## [1.4.0] - 2023-07-23
 
@@ -50,7 +53,9 @@ This is the initial release!
 
 -   Added `Min`, `Max`, `Sum`, `SequenceEqual` and `Average`
 
-[Unreleased]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.4.0...HEAD
+[Unreleased]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.4.1...HEAD
+
+[1.4.1]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.4.0...1.4.1
 
 [1.4.0]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.3.0...1.4.0
 
