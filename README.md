@@ -35,6 +35,14 @@ List<int> numbers = GetNumbers();
 var result = numbers.Min();
 ```
 
+Some functions like `Average` have convenient overloads to specify the return type:
+```csharp
+List<int> numbers = GetNumbers();
+double result = numbers.Average<int, double>();
+```
+
+This can overcome the limitation of the return type being the same as the input type. This is especially useful for `Average` as the result is often a `double` but the input is an `int`.
+
 ## Benchmark
 You can head over to [benchmark section](tests/LinkDotNet.LinqSIMDExtensions.Benchmarks/) to see the setup. The following section will show you some results of different machines and architectures. Keep in mind to test against your specific use case with the hardware that will run it! SIMD can vary a lot depending on the hardware. Newer hardware tends to have better support for SIMD (if x86/x64 is used).
 
