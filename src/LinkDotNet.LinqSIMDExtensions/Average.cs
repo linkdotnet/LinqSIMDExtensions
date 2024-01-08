@@ -23,6 +23,20 @@ public static partial class LinqSIMDExtensions
     }
 
     /// <summary>
+    /// Returns the average of the elements in the list and returns the result in the given type <typeparamref name="TReturn"/>.
+    /// </summary>
+    /// <typeparam name="T">The input type of the list.</typeparam>
+    /// <typeparam name="TReturn">The return type that is used for the calculation of the average (division).</typeparam>
+    public static TReturn Average<T, TReturn>(this List<T> list)
+        where T : unmanaged, INumberBase<T>
+        where TReturn : unmanaged, INumberBase<TReturn>, IDivisionOperators<TReturn, TReturn, TReturn>
+    {
+        ArgumentNullException.ThrowIfNull(list);
+
+        return Average<T, TReturn>(CollectionsMarshal.AsSpan(list));
+    }
+
+    /// <summary>
     /// Returns the average of the elements in the array.
     /// </summary>
     /// <typeparam name="T">Any number-like object that is able to use the division operation.</typeparam>
@@ -37,6 +51,20 @@ public static partial class LinqSIMDExtensions
         ArgumentNullException.ThrowIfNull(array);
 
         return Average(array.AsSpan());
+    }
+
+    /// <summary>
+    /// Returns the average of the elements in the list and returns the result in the given type <typeparamref name="TReturn"/>.
+    /// </summary>
+    /// <typeparam name="T">The input type of the list.</typeparam>
+    /// <typeparam name="TReturn">The return type that is used for the calculation of the average (division).</typeparam>
+    public static TReturn Average<T, TReturn>(this T[] array)
+        where T : unmanaged, INumberBase<T>
+        where TReturn : unmanaged, INumberBase<TReturn>, IDivisionOperators<TReturn, TReturn, TReturn>
+    {
+        ArgumentNullException.ThrowIfNull(array);
+
+        return Average<T, TReturn>(array.AsSpan());
     }
 
     /// <summary>
@@ -66,6 +94,20 @@ public static partial class LinqSIMDExtensions
     {
         var length = T.CreateChecked(span.Length);
         var divisionOperators = span.Sum() / length;
+        return divisionOperators;
+    }
+
+    /// <summary>
+    /// Returns the average of the elements in the list and returns the result in the given type <typeparamref name="TReturn"/>.
+    /// </summary>
+    /// <typeparam name="T">The input type of the list.</typeparam>
+    /// <typeparam name="TReturn">The return type that is used for the calculation of the average (division).</typeparam>
+    public static TReturn Average<T, TReturn>(this Span<T> span)
+        where T : unmanaged, INumberBase<T>
+        where TReturn : unmanaged, INumberBase<TReturn>, IDivisionOperators<TReturn, TReturn, TReturn>
+    {
+        var length = TReturn.CreateChecked(span.Length);
+        var divisionOperators = TReturn.CreateChecked(span.Sum()) / length;
         return divisionOperators;
     }
 }

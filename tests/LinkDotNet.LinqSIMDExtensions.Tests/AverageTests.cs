@@ -70,4 +70,34 @@ public class AverageTests
 
         average.ShouldBe(5);
     }
+
+    [Fact]
+    public void GivenSomeIntegersAsSpan_WhenAverageDouble_ThenAverageIsReturned()
+    {
+        var numbers = new[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+
+        var average = numbers.AsSpan().Average<int, double>();
+
+        average.ShouldBe(4.5);
+    }
+
+    [Fact]
+    public void GivenSomeIntegersAsList_WhenAverageDouble_ThenAverageIsReturned()
+    {
+        var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
+
+        var average = numbers.Average<int, double>();
+
+        average.ShouldBe(4.5);
+    }
+
+    [Fact]
+    public void GivenSomeIntegersAsArray_WhenAverageDouble_ThenAverageIsReturned()
+    {
+        var numbers = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+
+        var average = numbers.Average<int, double>();
+
+        average.ShouldBe(4.5);
+    }
 }
