@@ -62,4 +62,14 @@ public class SumTests
 
         sum.ShouldBe(55);
     }
+
+    [Fact]
+    public void GivenEmptyList_WhenRetrievingSum_ThenZeroIsReturned()
+    {
+        var numbers = new List<int>();
+
+        var sum = numbers.Sum();
+
+        sum.ShouldBe(0);
+    }
 }

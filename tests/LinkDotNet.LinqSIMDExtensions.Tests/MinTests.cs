@@ -81,4 +81,12 @@ public class MinTests
 
         min.ShouldBe(0);
     }
+
+    [Fact]
+    public void ShouldThrowInvalidOperationException_WhenSequenceIsEmpty()
+    {
+        var sequence = new List<int>();
+
+        Should.Throw<InvalidOperationException>(() => sequence.Min());
+    }
 }

@@ -7,7 +7,12 @@ All notable changes to **ValueStringBuilder** will be documented in this file. T
 ## [Unreleased]
 
 ### Added
+
 - `Average` can return more specific return types to enable scenarios where the input is an `integer` but the result should be a `double`.
+ 
+### Changed
+
+- `Min`, `Max`, `Average` will throw an `InvalidOperationException` when the input is empty. This is to be consistent with the behavior of the **LINQ** versions of these methods.
 
 ## [1.4.1] - 2024-01-07
 

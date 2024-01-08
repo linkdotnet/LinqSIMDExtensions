@@ -94,10 +94,26 @@ public class AverageTests
     [Fact]
     public void GivenSomeIntegersAsArray_WhenAverageDouble_ThenAverageIsReturned()
     {
-        var numbers = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+        var numbers = new[] { 1, 2, 3, 4, 5, 6, 7, 8 };
 
         var average = numbers.Average<int, double>();
 
         average.ShouldBe(4.5);
+    }
+
+    [Fact]
+    public void ShouldThrowInvalidOperationException_WhenSequenceIsEmpty()
+    {
+        var sequence = new List<int>();
+
+        Should.Throw<InvalidOperationException>(() => sequence.Average());
+    }
+
+    [Fact]
+    public void ShouldThrowInvalidOperationException_WhenSequenceIsEmptyAndIsCasting()
+    {
+        var sequence = new List<int>();
+
+        Should.Throw<InvalidOperationException>(() => sequence.Average<int, double>());
     }
 }

@@ -83,4 +83,12 @@ public class MaxTests
 
         max.ShouldBe(20);
     }
+
+    [Fact]
+    public void ShouldThrowInvalidOperationException_WhenSequenceIsEmpty()
+    {
+        var sequence = new List<int>();
+
+        Should.Throw<InvalidOperationException>(() => sequence.Max());
+    }
 }

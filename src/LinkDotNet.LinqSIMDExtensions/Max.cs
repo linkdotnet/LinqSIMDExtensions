@@ -45,6 +45,11 @@ public static partial class LinqSIMDExtensions
     public static T Max<T>(this Span<T> span)
         where T : unmanaged, IMinMaxValue<T>, INumber<T>
     {
+        if (span.IsEmpty)
+        {
+            throw new InvalidOperationException("Sequence contains no elements");
+        }
+
         var spanAsVectors = MemoryMarshal.Cast<T, Vector<T>>(span);
         var maxVector = VectorHelper.CreateWithValue(T.MinValue);
 

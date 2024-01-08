@@ -41,6 +41,11 @@ public static partial class LinqSIMDExtensions
     public static bool Contains<T>(this Span<T> span, T value)
         where T : unmanaged, INumberBase<T>
     {
+        if (span.IsEmpty)
+        {
+            return false;
+        }
+
         var spanAsVectors = MemoryMarshal.Cast<T, Vector<T>>(span);
         var valueVector = VectorHelper.CreateWithValue(value);
 
@@ -53,22 +58,6 @@ public static partial class LinqSIMDExtensions
         }
 
         var remainingElements = span.Length % Vector<T>.Count;
-        return remainingElements > 0 && ContainsSequential(span[^remainingElements..], value);
-    }
-
-    private static bool ContainsSequential<T>(Span<T> span, T value)
-        where T : unmanaged, INumberBase<T>
-    {
-        foreach (var elem in span)
-        {
-            if (!elem.Equals(value))
-            {
-                continue;
-            }
-
-            return true;
-        }
-
-        return false;
+        return remainingElements > 0 && MemoryExtensions.Contains(span[^remainingElements..], value);
     }
 }

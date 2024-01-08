@@ -92,6 +92,11 @@ public static partial class LinqSIMDExtensions
     public static T Average<T>(this Span<T> span)
         where T : unmanaged, INumberBase<T>, IDivisionOperators<T, T, T>
     {
+        if (span.IsEmpty)
+        {
+            throw new InvalidOperationException("Sequence contains no elements");
+        }
+
         var length = T.CreateChecked(span.Length);
         var divisionOperators = span.Sum() / length;
         return divisionOperators;
@@ -106,6 +111,11 @@ public static partial class LinqSIMDExtensions
         where T : unmanaged, INumberBase<T>
         where TReturn : unmanaged, INumberBase<TReturn>, IDivisionOperators<TReturn, TReturn, TReturn>
     {
+        if (span.IsEmpty)
+        {
+            throw new InvalidOperationException("Sequence contains no elements");
+        }
+
         var length = TReturn.CreateChecked(span.Length);
         var divisionOperators = TReturn.CreateChecked(span.Sum()) / length;
         return divisionOperators;
