@@ -6,13 +6,15 @@ All notable changes to **ValueStringBuilder** will be documented in this file. T
 
 ## [Unreleased]
 
+## [1.5.0] - 2024-01-08
+
 ### Added
 
-- `Average` can return more specific return types to enable scenarios where the input is an `integer` but the result should be a `double`.
- 
+-   `Average` can return more specific return types to enable scenarios where the input is an `integer` but the result should be a `double`.
+
 ### Changed
 
-- `Min`, `Max`, `Average` will throw an `InvalidOperationException` when the input is empty. This is to be consistent with the behavior of the **LINQ** versions of these methods.
+-   `Min`, `Max`, `Average` will throw an `InvalidOperationException` when the input is empty. This is to be consistent with the behavior of the **LINQ** versions of these methods.
 
 ## [1.4.1] - 2024-01-07
 
@@ -61,7 +63,9 @@ This is the initial release!
 
 -   Added `Min`, `Max`, `Sum`, `SequenceEqual` and `Average`
 
-[Unreleased]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.4.1...HEAD
+[Unreleased]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.5.0...HEAD
+
+[1.5.0]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.4.1...1.5.0
 
 [1.4.1]: https://github.com/linkdotnet/LinqSIMDExtensions/compare/1.4.0...1.4.1
 
