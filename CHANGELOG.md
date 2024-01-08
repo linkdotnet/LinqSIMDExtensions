@@ -6,6 +6,9 @@ All notable changes to **ValueStringBuilder** will be documented in this file. T
 
 ## [Unreleased]
 
+### Added
+- `Average` can return more specific return types to enable scenarios where the input is an `integer` but the result should be a `double`.
+
 ## [1.4.1] - 2024-01-07
 
 ### Fixed
